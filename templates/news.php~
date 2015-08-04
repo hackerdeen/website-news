@@ -1,0 +1,15 @@
+{% extends "page.php" %}
+
+{% block title %}News{% endblock %}
+
+{% block page %}
+<h2>News</h2>
+{% for nl in news %}
+<h3>{{ nl.title }}</h3>
+{{ nl.body|safe }}
+{% for article in nl.articles %}
+<p><a href="{{ article.file_base }}.php">{{ article.title }}</a></p>
+{% endfor %}
+{{ nl.footer|safe }}
+{% endfor %}
+{% endblock %}

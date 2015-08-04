@@ -1,0 +1,89 @@
+@@title The Local GPG Web-of-Trust 
+@@author irl 
+@@date 2015 03 15
+@@body 
+<p>The ability to trust that the person you are communicating with
+over the Internet is the person you think they are is important. You
+wouldn't want to give your private details to a website impersonating
+your bank, nor would you want to download malicious software from a
+person impersonating a friendly FLOSS project.</p>
+
+<p>On the Web, HTTPS is becoming more common on websites, and this
+provides a method of verifying, using a trusted third-party, that the
+person is who they claim to be. Your browser contains a list of
+trusted certificates from "Certificate Authorities" and these
+authorities will sign the certificates of others after having
+validated their identity. These authorities can also sign other
+authorities certificates and then you can trust the certificates
+signed by that authority too by following the trust chain back to the
+certificate you have in your browser.</p>
+
+<p>By having these central authorities, the whole system can break
+down if the central authority is compromised. You only have their word
+to go on and you'll find that if you look in your browser, there are
+quite a few certificates in there from companies you've never heard of
+(not to mention the certificates that those companies have signed that
+you will then trust to sign other certificates) and this process is
+meant to be enough for you to hand over private information or
+download software to run on your machine.</p>
+
+<p>The model used in HTTPS is a "chain". This chain is limiting for
+the reason that it requires these central authorities. GPG however,
+uses a "web-of-trust".  This web allows for you to have multiple paths
+through which to trust a certificate, which means that trust can be
+more personal. You may trust a friend's certificate that may trust the
+certificate you're looking to verify, you may even have multiple
+friends which all trust the validity of a single certificate, allowing
+you to have a stronger level of trust and removing the single point of
+failure.</p>
+
+<p>I visited 31C3 over the new year, and attended a key signing party
+there. This is where people get together to improve the trust on their
+keys and to help others increase the trust on their keys. In order to
+validate the person's identity before signing their key, at GPG
+Keysigning parties, it is common practice to check some form of
+government issued ID. This may be a passport, identity card or driving
+license.</p>
+
+<p>For everyone at the key signing party, this seemed to be accepted
+and no one appeared to acknowledge, if they did it was not openly,
+what was really happening. Our web-of-trust was merely an abstraction
+of the HTTPS-style trust chain. We had returned control of trust back
+to central authorities, in this case governments, and reintroduced a
+single point of failure.</p>
+
+<p>In the past, this may have been necessary. GPG has been
+instrumental to the success of open-source projects in allowing for,
+amongst other things, verifying code base integrity and for the secure
+submission of vulnerabilities before public disclosure. There were not
+however many people using GPG in your local area and the best way to
+get trust in your key was to visit a key signing party where the
+likelihood is that you did not know many of the people there.
+Government issued ID was the quickest and easiest way to establish
+trust in the identity of the person stood before you.</p>
+
+<p>Since the revelations from Snowden, and with the increase in the
+availability and usability of front ends for working with GPG, there
+are now more GPG users around and some of them are going to be local
+to you. You may even know them already. It is now possible to have
+strong trust in keys through people that can tell you the identity is
+correct, not just because they saw a government ID, but because they
+have known the person for years.</p>
+
+<p>Hackerspaces seem like a good place to start, and so I have put
+together a website for the <a
+href="http://irl.sdf.org/spacekeys/">57North Hacklab Web-Of-Trust.</a>
+You'll be able to see here members of the 57North community that use
+GPG, and the trust links between these keys. If you'd like to have
+your key added to this graph, send an email to <a
+href="mailto:irl@fsfe.org">irl@fsfe.org</a> and your key will be
+added. It's up to you to get the trust links though.</p>
+
+<p>I will be running a <a
+href="http://lists.57north.co/pipermail/57north-discuss/2015-March/001675.html">key
+signing party</a> on the 19th March 2015 at 7:30pm at 57North
+Hacklab. I'd like to see this grow further, which is why I am
+organising this event and also inviting the Aberdeen University
+Computing Science Society and Edinburgh Hacklab along to attend. For
+details on how to get involved, see the announcement of this event on
+the mailing list.</p>

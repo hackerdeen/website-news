@@ -1,0 +1,81 @@
+@@author Nordin
+@@date 2015 03 15
+@@title Getting the space weather 
+@@body
+<p>I drove my small car in an after-work dash to a quite low cliff
+side car park in-between the harbour lighthouses. There I sat intently
+listening to radio static blasting from my mac. A freshman radio
+enthusiast, I was planning to receive magic space images from orbit
+via my magnetic roof antenna plugged into a cheap SDR radio
+receiver. The long, drawn sputnik-sounding 'weep weep' with
+superimposed donkey-like short 'clip clop' of the NOAA Automatic
+Picture Transmission (APT) signal was my pay dirt. After its capture,
+the audio signal was going to be processed via a simple tool chain to
+become a beautiful, fully-formed live weather photo from orbit. This
+exciting outcome was not a given however, as I had found at my last
+two attempts. I was pretty sure this run would be a success and not a
+waste of hours. I had brought sandwiches and a banana just in
+case.</p>
+
+<p>I'd heard about the magic NOAA weather broadcasts from Hackerspace
+radio folk and it seemed like a fun way to use the RTL-SDR and Sky
+Scanner Rx antenna combo I'd bought on a whim. A number of weeks ago,
+space members hosted a radio weekend at Aberdeen Uni where folks
+erected their roof dipoles and made contacts over HF. Making use of
+the roof also, I played with receiving the NOAA signals, sprinting to
+the chilly roof when the sats passed overhead. Orbiting National
+Oceanic and Atmospheric Administration (NOAA) satellites circle
+pole-to-pole 540 miles above the earth. NOAA have a few sats up there
+and the three main APT players - NOAA15, NOAA18 and NOAA19 - pass
+overhead a few times a day. NOAA15 and 18 have their downlinks as
+137.6200MHz and 137.9125MHz respectively and seem to be the strongest
+signals for me.</p>
+
+<p>To track sat passover times, I found <a
+href="http://gpredict.oz9aec.net/download.php">gpredict</a> to be a
+great open source tool that can be installed cross-platform.  To
+capture the actual audio via an RTL-SDR once I had a sat overhead, I
+used <a href=" http://gqrx.dk">GQRX</a> for the mac set to narrow FM,
+but SDR# does a great job on a windows machine. On the mac, outgoing
+audio can be directed to an input device via the virtual soundflower
+device and recorded via Audacity set to a sample rate of 11025hz. On a
+non-mac, you’ll probably have a ‘stereo-mix’ device in place already.
+The resulting WAV file then needs to be imported into the very cool
+WxtoImg tool. It does a one-click job of automatically transforming
+the audio into imagery, even if the signal is incomplete. This was the
+<a href="http://nordintown.com/radio/NOAA3.mp3">audio</a> and
+resulting <a href="http://nordintown.com/radio/NOAA3.png">image</a> of
+my first attempt.  Not great, but a good start. At 38secs the audio is
+perfect, but it does not last. I sought a clearer, more rural sky, so
+a few weeks later I drove to the harbour coastal car parks and took a
+shot there, but the cloudy day seemed to prevent a strong signal.  I
+got the ‘weeps’ but not the‘clops’ :(</p>
+
+<p>So back to the present: there I was in my third attempt, waiting in
+my little car in a car park with worlds smallest entry gate
+(seriously, my Corsa barely fitted past). After waiting a spell, I
+started to hear shadows of that magic sound.  I had run my mac battery
+down by this point and I did not want it to die at this crucial stage.
+I plugged in my car charger for more juice.  Not long after, I
+COMPLETELY lost the signal. Having not started the audio capture I was
+pretty pissed when no tweaking about the freq made any change. The sat
+was still in full view but I was getting nothing with 3 mins till
+LOS. In fact the entire noise floor had risen up (that should have
+been a clue). I checked the usb/coax connectors and roof aerial but no
+change. The sat passed below the horizon just as I realised that I had
+started the car engine to make sure my charging laptop and phone would
+not kill my car battery. Stopping the car brought the noise floor back
+to normal. DAMIT DAMIT!! Thats how I learnt that using cheap radios
+from inside a car sometimes work better with the engine and chargers
+off. Feel free to write that down if you are a radio dumb ass like me.
+On the plus, I guess I forever learnt something new about SDR radio
+and found a nice radio spot, so not a waste of hours at all.</p>
+
+<p>If *you* want to have the same (or hopefully more successful) raw
+audio-to-imagery experience, you should hurry. The APT sats are
+getting pretty old and cannot hold orbit forever. NOAA APT
+transmissions are <a
+href="http://noaasis.noaa.gov/NOAASIS/ml/future.html">scheduled to
+die</a> from 2017 and will be replaced with something digital.  Boo
+hiss boo.  If you do have a go though, for gods sake make sure you
+bring sandwiches. It seams brains are optional.</p>

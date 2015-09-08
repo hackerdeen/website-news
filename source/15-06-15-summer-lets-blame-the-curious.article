@@ -1,0 +1,61 @@
+@@author Nordin
+@@date 2015 06 15
+@@title Let's blame the curious
+@@body
+<p>As a first year at secondary school, I was already pretty keen on messing about
+with the command line. The major difference from before was the introduction of
+a networked environment. Since Linux came to me later in life (my second job
+after uni) this was exclusively DOS 7 at this point.</p>
+
+<p>Many hours were spent in the IT room fungineering some qbasic
+collision-detection code into crap and noisy games. A side distraction to this
+was exploration of the small Novell network environment that our school IT room
+and adjoining library shared. In those days, Novell logins were executed from
+the command prompt via LOGIN.EXE which ran a large script to map the relevant
+resources. Fun could be had by investigating the executables the script called,
+although all you could really do was map more drives and folders to items that
+the Novel eDirectory knew you already had access to.</p>
+
+<p>Next door, the Library machines displayed a 24/7 curses-based gui that allowed
+you to search the book database. Only the search feature worked o/c; all
+visible administration buttons were not navigable. These machines were just
+regular PCs with logins that ran scripts to set various local vars and launch
+the library gui, all under a login name and password 'booklook'. Exiting (or
+even crashing) the gui killed the login straight away, so it appeared to be
+locked down well. Crucially, user 'booklook' could be used over the entire
+network, so you could also login and browse the library from the IT room.</p>
+
+<p>Playing late one evening, I noticed that I could use ATTACH.EXE from my own
+login to co-login and access user booklook's resources and executable rights.
+The attach command is used to gain a licensed connection to another NetWare
+server without having to use login.exe and without having to logout of the
+server a user is currently attached to. User booklook appeared to be on a
+different, older Novell server, so this attached without a problem and gave me
+mappable access to the library gui's executabe whilst bypassing user booklook's
+login script. Admin gui items were still unselectable for some reason but I was
+able to view a history of in-program commands, which opened the admin gui
+popups just fine. From here I confirmed I was able to see who had what book on
+loan and reissue books as I saw fit. It was here that I made my error.</p>
+
+<p>To test if I had found a stupid security gap, I asked a fellow explorer buddy
+if I could assign a book to him and return it, which he agreed to allow not
+believing it would work at all. It did and we had a chuckle at how the sysadmin
+had ballsed up. </p>
+
+<p>Now, I never showed explorer-buddy the process I undertook but either he
+figured it out and went too far or something else just happened. Either way, 2
+days later the librarian suddenly found that her admin credentials stopped
+working. My ex-buddy cowardly referred the 'Head of boys' to my exploration
+efforts which led the sysadmin to the copies of the login script on my user
+drive. This seemed to clearly implicate me as the cause (?!). I explained that
+yes I had found a flaw and had showed the ex-buddy/fresh-enemy, but no I did
+not reset any password. True, I had not disclosed what I had found asap, but I
+just somehow knew it would be seen as system abuse rather then positive
+exploration. We both received a token punishment called a 'dinner duty' whereby
+purps shamefully collect trays in the very public canteen. I also earned the
+scorn of the head librarian for a few months after.</p>
+
+<p>I am occasionally reminded of this story when I read about major infosec
+breaches. This is not because someone nasty broke/stole something, but because
+before that, someone curious probably hid something to avoid the blame/shame
+from those overseeing.</p>

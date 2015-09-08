@@ -1,0 +1,97 @@
+@@author Andy
+@@date 2015 06 15
+@@title Pan European Open Sorcery
+@@body
+
+<p>Last weekend I went to J & Beyond, a 3 day European conference about the Open
+Source CMS Joomla.  This is kind of my thing, I've been working with Joomla
+(professionally and as a member of the community) for maybe 10 years. </p>
+
+<p>I've been to 5 UK Joomla conferences, volunteered at 3 and spoken at 2, they're
+just nice, a friendly community getting together and hanging out. Although J &
+Beyond has been going for several years, I've never made it. Usually it is in
+Holland or Germany, alternate years, but this year it was in Prague. So I went
+:)</p>
+
+<p>Joomla, as an organisation, is great really, very well structured and
+democratic, with no individual or corporate overlord (as is the case with
+Drupal or WordPress respectively). However, in the last few months, things have
+been more complicated than usual. There were reasons to document and legislate
+for a code of conduct due to some toxic behaviour in the organisation. Also
+there was a vote on restructuring, which although fine, caused some divisions.
+It was really a good time for folk to get together and get some face-to-face
+time. If you can't solve problems over Czech beer, then it is probably not
+possible.</p>
+
+<p>There were about 230 attendees from maybe 30 different counties. There was lots
+of specific Joomla talks, but also lots of more general talks, particularly the
+keynotes.</p>
+
+<p>The Keynotes were...  </p>
+
+<p><a href="https://twitter.com/codepo8">Christian Heilmann</a></p>
+ 
+<p> Chris is now at MicroSoft and was previously at Mozilla. This was
+    a good talk on general trends in web and mobile. He was quite
+    excited about M$'s new Edge browser, and fairly down on mobile
+    Apps. Chatting with him later, he seemed nice, a funny punk, and
+    more approachable than you might expect.  </p>
+
+<p><a href="https://twitter.com/mbabker">Michael Babker</a></p>
+
+<p> Michael is a key Joomla developer from the US. He's a good guy,
+    and a skilled developer on several levels. His talk, "Integrating
+    Joomla with the PHP community" was good, quite Joomla centric. US
+    Army vet, but you'd never guess really.</p>
+
+<p>Rafael Dohms</p>
+
+<p> Rafael is a leading PHP developer and PHP thought leader from
+    Holland. His talk "Journey into your lizard brain" was really
+    nice, about the mind, and the programmer mind, in the context of
+    his wife having a bad head injury in a car crash.</p>
+
+<p><a href="https://twitter.com/perezbox">Tony Perez</a></p>
+
+<p> Tony's talk was a 101 on web security in 2015.</p>
+
+<p><a href="https://twitter.com/kayladnls">Kayla Daniels</a><p>
+
+<p> This was a frankly inspiring talk about diversity in the developer
+    community. Many, including myself, gave her a standing
+    ovation. There were several parts of the talk that had me welling
+    up. </p>
+
+<p><a href="https://twitter.com/JessicaDunbar">Jessica Dunbar</a></p>
+
+<p> It's a tough shift, first one on Sunday Morning, but Jessica,
+    addressed the future direction of the Joomla! project. </p>
+
+Nic Dionysopoulos[6]
+    Nic is a well know Joomla developer, and has contributed a hugely to the
+    project over the years. His talk was nice and technical, with lots of code
+    tips and tricks. I made sure I got a seat at the front so I could read all
+    the code in his slides.
+
+Keynote speakers by nationality, USA 4, Denmark, Greece and Holland, 1 each.
+The next version of Joomla will probably have an API. This will be great for
+Apps, IoT, OpenGov and many other applications. There was lots of free beer in
+the evenings, thanks to sponsors, Czech beer is awesome :) Joomla is talking
+about using composer PHP package management stuff.
+
+My talk on Apps went OK, the punters seemed happy. It was a modified version
+of the one done at TechMeetup, thanks for all the feedback, that was really
+useful.
+
+The conference video team were really good, all sessions were recorded
+in a really usable format, and they had the content uploaded to YouTube in a
+few hours. Really well organised and effective. Conference video at scale is
+hard to do, so this is pretty impressive. I went to good talks on Informatics,
+UI/UX, NoSQL as well as lots of more Joomla centric ones.
+
+Friday evening there was an x-factor type thing, which was ok due to the free
+beers. One guy, Soren Beck Jensen, did a Joomla version of Leonard Cohen's
+Hallelujah, which everyone sang along too, quite a bonkers moment, Halejoomla
+indeed! Saturday evening there was a geeky pub-type quiz in evening, which our
+team won, despite more FREE BEER. Team was called "root" and had, I think, 3
+Brits, 1 Spaniard, 4 Germans and 2 Poles in it. Not much sleeping happened.

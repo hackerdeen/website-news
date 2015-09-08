@@ -1,0 +1,95 @@
+@@author Hibby
+@@date 2015 06 15
+@@title Porting Debian
+@@body
+<p>The Raspberry Pi 2 launch a few months back was cause for great excitement. A
+refresh to the ubiquitous platform was long overdue, and the fact the
+announcement came out the blue added to the hype. I was comfortably on the hype
+train by 0930 - for some reason, I just had to have one.</p>
+
+<p>After an agonising wait (next day delivery to Westhill is never next day) it
+arrived and I was much happier. </p>
+
+<p>A quick boot into raspbian confirmed what was expected - it's noticably faster
+and hums along admirably, running everything up to and including XBMC - that
+menu lag is finally gone!</p>
+
+<p>The story is boring, though, if it's just plug in and play - news at 10, new
+version of a platform beats the old version. The thing that makes the raspi2
+really interesting is that its architecture is ARMv7 - the minimum requirement
+for Debian's armhf (hardware floating point) port.</p>
+
+<p>So, how does one port Debian to a new platform? This is what I set out to learn
+- what I'll present below is a quick overview with keywords for you to look at
+and search for, not a how-to guide. </p>
+
+<p>There are a few moving parts that have to be captured here - first off is the
+Debian user space, the Linux kernel and the storage medium. There's also the
+raspberry pi's unorthodox method of booting to wrap your head around. </p>
+
+<p>Storage is quick and simple: Raspi boots from an SD card and it holds a minimum
+of two partitions - boot and system. Boot's where your kernel lives, System is
+where your `/` partition lives. My boot is 64MB, to give me some breathing room
+and / is the rest. I've got no swap because that would be daft and wear out the
+SD card faster than the raspi already does.</p>
+
+<p>Debian userland can be easily built in two main ways: <a
+href="https://wiki.debian.org/Multistrap">Multistrap</a> or <a
+href="https://wiki.debian.org/Debootstrap">debootstrap</a>. Initially,
+multistrap looked like the way forward, and honestly still does - it
+can be reproducibly, easily configured via a config file and it's easy
+to add extra repos and packages so all you need to do is call
+multistrap from the command line and have a heavily customised user
+space straight away. Unfortunately for me, this produced errors I
+couldn't wrap my head around. The solution was debootstrap - it's not
+quite as elegant as multistrap in my eyes, but worked a whole lot
+better.</p>
+
+<p>Once debootstrap has been run for your target architecture and release of
+debian (stable/testing/etc) the next step is configuration!</p>
+
+<p>I configured this through the use of a chroot and qemu - configuration
+consisted of populating /etc/fstab, /etc/hostname, /etc/network/interfaces,
+/etc/modules with the raspi specific sound module.</p>
+
+<p>That's the userspace config more or less complete, give or take a few wee
+things here and there - root account and password and the like.</p>
+
+<p>The kernel is a pretty simple step at this stage, but with a caveat. I spent
+some time agonising over the kernel - i cloned the rpi kernel git repo and
+fannied about with building it for a while. That was a terrible idea, don't do
+this unless you know more about kernels than me (not hard).</p>
+
+<p>It proved much easier to use hexxeh's rpi-update tool to download a prebuilt
+image. Naturally, there may be trust issues on your part, but I've used
+hexxeh's kernels for a while, and I'm willing to trust them based on their
+prior work.</p>
+
+<p>Pulling in the hexxeh kernel is as simple as mounting the previously used
+chroot and using curl to pull down the script from githib (I know it's
+potentially unsafe, but it's in wide use. We're all in this together). Marking
+it executable and running rpi-update will pull down the latest built kernel
+image to your boot partition. It also copies the required firmware to boot the
+system so you're not left looking at a blank screen.</p>
+
+<p>I made a massive mistake in my initial version of fstab - I forgot to define
+`/` as the mmcblk0p1 partition. Nothing could write and I couldn't log in. This
+was pretty sad for me! I had to install curl, git and binutils for rpi-update
+to work, also. I kept forgetting that I'd built an completely virgin,
+unconfigured system from scratch. </p>
+
+<p>Outside of that I didn't fall down too may holes, really. The usual
+frustrations of Linux.</p>
+
+<p>Of course, I go through this process manually and bang my head off a wall for
+weeks on end and it turns out someone's scripted it. It was a nice thing to
+discover - it validated much of what I'd learned and added to the overall
+lessons, so I took more away from it than I thought I would.</p>
+
+<p>I gave the script a wee edit and brought it up to date and the link can be
+found <a href"">here</a></p>
+
+<p>This project took me a good amount of time to wrap my head around - OS building
+is a totally new world to me, and it's been a worthwhile investment of my time
+and energy. I now know a little bit more about how all of these weird things
+interact, and that's the reason I got the pi in the first place.</p>

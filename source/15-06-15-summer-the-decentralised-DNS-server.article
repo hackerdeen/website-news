@@ -1,0 +1,33 @@
+@@author Yakamo
+@@date 2015 06 15
+@@title The Decentralised DNA Server
+@@body
+
+<p>This is a project I have been working on for the past few weeks, I
+started using cjdns a good while ago and the one thing it misses Is a
+decent Decentralised DNS system. So instead of waiting for someone
+else to come up with one I thought I would give it a shot, so far
+progress is good, I am close to getting a very rough system(messy as
+shit code) working and ready for Alpha testing.</p>
+
+<p>The Todo list is just as long as the code its self, but I hope to
+get help once a working version is out there, so if your interested or
+just want to point out bad coding and tell me how I could do it better
+it would be very much appreciated.</p>
+
+<p>DDNS Basics:</p>
+
+<p>First off when <a href="https://github.com/yakamok/ddns/">DDNS</a>
+starts up it does a quick check to see if there are any servers it can
+see on cjdns and it then requests to to sync databases for the lastest
+lists of domains then starts up the main server.  The server takes a
+request from a client, checks if it exists and then checks cjdns to
+see what other nodes its connected to then probes those servers to see
+if they are running ddns if so any requests are propogated to those
+servers and those servers will do the same and pass the data on to any
+servers they find, this allows dns updates to spread fast. The server
+updates a simple file which lists in plain text the domains, the
+reason for plain text is so you can use a script or another program to
+pick up the data and process it quickly for use in the hosts file or
+something else of your own making. How ever this will change to sqlite
+or json later on.</p>

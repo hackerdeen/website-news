@@ -30,7 +30,6 @@ def get_news(folder):
     return newsletters
 
 def render_news(news):
-    print news
     news.sort(key=lambda k: k["date"], reverse=True)
     tl = jinja2.FileSystemLoader(searchpath="templates/")
     tEnv = jinja2.Environment(loader=tl)
@@ -45,12 +44,12 @@ def render_news(news):
         with codecs.open(os.path.join("output", letter["file_base"]+".php"), 
                          mode="w", encoding="utf-8") as outf:
             outf.write(page)
-        print letter["articles"]
         for article in letter["articles"]:
             page = articlet.render({"article": article})
             with codecs.open(os.path.join("output", article["file_base"]+".php"), 
                              mode="w", encoding="utf-8") as outf:
                 outf.write(page)
+        print "rendered " + letter["title"]
         
 if __name__ == "__main__":
     render_news(get_news("source/"))
